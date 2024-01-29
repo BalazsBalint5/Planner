@@ -9,6 +9,10 @@ body {
   font-family: "Inter";
 }
 
+.main-header {
+  margin-bottom: 40px;
+}
+
 .nav-container {
   display: flex;
   align-items: center;
@@ -43,4 +47,41 @@ body {
   border: none;
   padding: 10px 15px;
   border-radius: 8px;
+  cursor: pointer;
+}
+
+.column-container {
+  display: flex;
+  height: 400px;
+  gap: 30px;
+  justify-content: center;
+}
+
+.task-column {
+  width: 200px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.column-header {
+  text-align: center;
+  background-color: #91a7ff;
+  padding: 10px;
+  font-weight: bold;
+  color: #fff;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.todo-label {
+  background-color: #91a7ff;
+}
+
+.in-progress-label {
+  background-color: #74c0fc;
+}
+
+.done-label {
+  background-color: #8ce99a;
 }
