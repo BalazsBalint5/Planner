@@ -72,6 +72,7 @@ body {
   color: #fff;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
+  margin-bottom: 10px;
 }
 
 .todo-label {
@@ -84,4 +85,35 @@ body {
 
 .done-label {
   background-color: #8ce99a;
+}
+
+.task-column-element {
+  padding: 10px;
+  height: 60px;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-bottom: 15px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.todo-element {
+  background-color: #dbe4ff;
+}
+
+.in-progress-element {
+  background-color: #d0ebff;
+}
+
+.done-element {
+  background-color: #d3f9d8;
+}
+
+.task-column-element-text {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.task-column-element-date {
+  font-size: 8px;
+  text-align: end;
 }
