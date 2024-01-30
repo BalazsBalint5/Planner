@@ -2,8 +2,13 @@ package com.bb.planner.repository.own;
 
 import com.bb.planner.models.Task;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
 import jakarta.transaction.Transactional;
+import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
+@Repository
 public class TaskRepositoryImpl implements TaskRepository{
 
     private final EntityManager entityManager;
@@ -13,13 +18,21 @@ public class TaskRepositoryImpl implements TaskRepository{
     }
 
     @Override
+    public List<Task> getAll(Task element) {
+
+        TypedQuery<Task> theQuery = entityManager.createQuery("FROM Task", Task.class);
+
+        return theQuery.getResultList();
+    }
+
+    @Override
     public void get(Task element) {
-        entityManager.
+        entityManager.find(Task.class, element);
     }
 
     @Override
     public void getById(Integer elementId) {
-
+        entityManager.find(Task.class, elementId);
     }
 
     @Override
@@ -30,11 +43,6 @@ public class TaskRepositoryImpl implements TaskRepository{
 
     @Override
     public void delete(Task element) {
-
-    }
-
-    @Override
-    public void deleteById(Integer elementId) {
-
+        entityManager.remove(element);
     }
 }
