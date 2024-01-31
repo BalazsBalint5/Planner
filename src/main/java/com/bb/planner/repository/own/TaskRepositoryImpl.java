@@ -26,13 +26,13 @@ public class TaskRepositoryImpl implements TaskRepository{
     }
 
     @Override
-    public void get(Task element) {
-        entityManager.find(Task.class, element);
+    public Task get(Task element) {
+        return entityManager.find(Task.class, element);
     }
 
     @Override
-    public void getById(Integer elementId) {
-        entityManager.find(Task.class, elementId);
+    public Task getById(Integer elementId) {
+        return entityManager.find(Task.class, elementId);
     }
 
     @Override
