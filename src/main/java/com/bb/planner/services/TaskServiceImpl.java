@@ -2,9 +2,11 @@ package com.bb.planner.services;
 
 import com.bb.planner.models.Task;
 import com.bb.planner.repositories.own.TaskRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class TaskServiceImpl implements TaskService{
 
     private final TaskRepository taskRepository;
