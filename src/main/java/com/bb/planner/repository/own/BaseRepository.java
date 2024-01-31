@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface BaseRepository<T, K> {
 
-    List<T> getAll(T element);
+    List<T> getAll();
     Task get(T element);
     Task getById(K elementId);
     void add(T element);

@@ -18,7 +18,7 @@ public class TaskRepositoryImpl implements TaskRepository{
     }
 
     @Override
-    public List<Task> getAll(Task element) {
+    public List<Task> getAll() {
 
         TypedQuery<Task> theQuery = entityManager.createQuery("FROM Task", Task.class);
 
