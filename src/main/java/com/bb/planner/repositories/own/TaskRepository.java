@@ -1,4 +1,4 @@
-package com.bb.planner.repository.own;
+package com.bb.planner.repositories.own;
 
 import com.bb.planner.models.Task;
 

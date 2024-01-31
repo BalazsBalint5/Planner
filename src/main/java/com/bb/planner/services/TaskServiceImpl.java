@@ -1,7 +1,7 @@
-package com.bb.planner.service;
+package com.bb.planner.services;
 
 import com.bb.planner.models.Task;
-import com.bb.planner.repository.own.TaskRepository;
+import com.bb.planner.repositories.own.TaskRepository;
 
 import java.util.List;
 

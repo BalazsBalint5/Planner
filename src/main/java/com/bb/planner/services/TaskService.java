@@ -1,4 +1,4 @@
-package com.bb.planner.service;
+package com.bb.planner.services;
 
 import com.bb.planner.models.Task;
 
