@@ -20,10 +20,19 @@ public class Task {
     private String taskDescription;
 
     @Column(name = "created_at")
+    @Temporal(TemporalType.DATE)
     private LocalDate createdAt;
 
     @Column(name = "status")
+    @Enumerated(EnumType.STRING)
     private Status status;
+
+    @ManyToOne
+    @JoinColumn(name = "topic_id")
+    private Topic topic;
+
+    public Task() {
+    }
 
     public Task(String taskLabel, String taskDescription, LocalDate createdAt, Status status) {
         this.taskLabel = taskLabel;
@@ -48,13 +57,5 @@ public class Task {
         return createdAt;
     }
 
-    @Override
-    public String toString() {
-        return "Task{" +
-                "taskId=" + taskId +
-                ", taskLabel='" + taskLabel + '\'' +
-                ", taskDescription='" + taskDescription + '\'' +
-                ", createdAt=" + createdAt +
-                '}';
-    }
+
 }

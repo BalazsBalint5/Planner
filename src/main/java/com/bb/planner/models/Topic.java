@@ -17,6 +17,7 @@ public class Topic {
     private String topicLabel;
 
     @Column(name = "task_list")
+    @OneToMany(mappedBy = "topic")
     private List<Task>  tasks;
 
     public Topic(String topicLabel) {
