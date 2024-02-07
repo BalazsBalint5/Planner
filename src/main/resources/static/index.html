@@ -11,87 +11,90 @@
       rel="stylesheet"
     />
     <title>Planner</title>
+    <script defer src="script.js"></script>
   </head>
   <body>
     <header class="main-header">
-      <nav class="nav-container">
-        <p class="logo">Planner</p>
+      <nav class="nav">
+        <p class="nav__logo">Planner</p>
         <div class="profile-container">
-          <button class="sign-out-btn">Sign Out</button>
-          <div class="profile"></div>
+          <button class="nav__sign-out-btn">Sign Out</button>
+          <div class="nav__profile"></div>
         </div>
       </nav>
     </header>
 
-    <section class="column-container">
-      <div class="topic-container task-column"></div>
+    <section class="columns-container">
+      <div class="topic-column"></div>
 
-      <div class="task-column">
-        <p class="column-header todo-label">ToDo</p>
-        <div class="task-column-element todo-element">
-          <p class="task-column-element-text">Testing new App API functions</p>
-          <p class="task-column-element-date">2024.01.29</p>
+      <div class="task-column task-column--todo">
+        <p class="task-column__header task-column__header--todo">ToDo</p>
+        <div class="task-column-element task-column-element--todo">
+          <p class="task-column-element__text">Testing new App API functions</p>
+          <p class="task-column-element__date">2024.01.29</p>
         </div>
-        <div class="task-column-element todo-element">
-          <p class="task-column-element-text">Implement CRUD repositories</p>
-          <p class="task-column-element-date">2024.01.29</p>
+        <div class="task-column-element task-column-element--todo">
+          <p class="task-column-element__text">Implement CRUD repositories</p>
+          <p class="task-column-element__date">2024.01.29</p>
         </div>
-        <div class="task-column-element todo-element">
-          <p class="task-column-element-text">
+        <div class="task-column-element task-column-element--todo">
+          <p class="task-column-element__text">
             Add models for spring web project
           </p>
-          <p class="task-column-element-date">2024.01.29</p>
+          <p class="task-column-element__date">2024.01.29</p>
         </div>
-        <div class="task-column-element todo-element">
-          <p class="task-column-element-text">Implement CRUD repositories</p>
-          <p class="task-column-element-date">2024.01.29</p>
+        <div class="task-column-element task-column-element--todo">
+          <p class="task-column-element__text">Implement CRUD repositories</p>
+          <p class="task-column-element__date">2024.01.29</p>
         </div>
       </div>
 
-      <div class="task-column">
-        <p class="column-header in-progress-label">In Progress</p>
-        <div class="task-column-element in-progress-element">
-          <p class="task-column-element-text">Testing new App API functions</p>
-          <p class="task-column-element-date">2024.01.29</p>
+      <div class="task-column task-column--in-progress">
+        <p class="task-column__header task-column__header--in-progress">
+          In Progress
+        </p>
+        <div class="task-column-element task-column-element--in-progress">
+          <p class="task-column-element__text">Testing new App API functions</p>
+          <p class="task-column-element__date">2024.01.29</p>
         </div>
-        <div class="task-column-element in-progress-element">
-          <p class="task-column-element-text">Implement CRUD repositories</p>
-          <p class="task-column-element-date">2024.01.29</p>
+        <div class="task-column-element task-column-element--in-progress">
+          <p class="task-column-element__text">Implement CRUD repositories</p>
+          <p class="task-column-element__date">2024.01.29</p>
         </div>
-        <div class="task-column-element in-progress-element">
-          <p class="task-column-element-text">
+        <div class="task-column-element task-column-element--in-progress">
+          <p class="task-column-element__text">
             Add models for spring web project
           </p>
-          <p class="task-column-element-date">2024.01.29</p>
+          <p class="task-column-element__date">2024.01.29</p>
         </div>
-        <div class="task-column-element in-progress-element">
-          <p class="task-column-element-text">Implement CRUD repositories</p>
-          <p class="task-column-element-date">2024.01.29</p>
+        <div class="task-column-element task-column-element--in-progress">
+          <p class="task-column-element__text">Implement CRUD repositories</p>
+          <p class="task-column-element__date">2024.01.29</p>
         </div>
       </div>
 
-      <div class="task-column">
-        <p class="column-header done-label">Done</p>
-        <div class="task-column-element done-element">
-          <p class="task-column-element-text">Testing new App API functions</p>
-          <p class="task-column-element-date">2024.01.29</p>
+      <div class="task-column task-column--done">
+        <p class="task-column__header task-column__header--done">Done</p>
+        <div class="task-column-element task-column-element--done">
+          <p class="task-column-element__text">Testing new App API functions</p>
+          <p class="task-column-element__date">2024.01.29</p>
         </div>
-        <div class="task-column-element done-element">
-          <p class="task-column-element-text">Implement CRUD repositories</p>
-          <p class="task-column-element-date">2024.01.29</p>
+        <div class="task-column-element task-column-element--done">
+          <p class="task-column-element__text">Implement CRUD repositories</p>
+          <p class="task-column-element__date">2024.01.29</p>
         </div>
-        <div class="task-column-element done-element">
-          <p class="task-column-element-text">
+        <div class="task-column-element task-column-element--done">
+          <p class="task-column-element__text">
             Add models for spring web project
           </p>
-          <p class="task-column-element-date">2024.01.29</p>
+          <p class="task-column-element__date">2024.01.29</p>
         </div>
-        <div class="task-column-element done-element">
-          <p class="task-column-element-text">Implement CRUD repositories</p>
-          <p class="task-column-element-date">2024.01.29</p>
+        <div class="task-column-element task-column-element--done">
+          <p class="task-column-element__text">Implement CRUD repositories</p>
+          <p class="task-column-element__date">2024.01.29</p>
         </div>
       </div>
     </section>
-    <script src="script.js"></script>
+    <button class="test-btn">Add new task</button>
   </body>
 </html>

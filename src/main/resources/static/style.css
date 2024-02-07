@@ -13,14 +13,14 @@ body {
   margin-bottom: 40px;
 }
 
-.nav-container {
+.nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 25px 50px;
 }
 
-.logo {
+.nav__logo {
   font-weight: bold;
   text-transform: uppercase;
   font-size: 20px;
@@ -33,14 +33,14 @@ body {
   align-items: center;
 }
 
-.profile {
+.nav__profile {
   width: 30px;
   height: 30px;
   background-color: gray;
   border-radius: 50%;
 }
 
-.sign-out-btn {
+.nav__sign-out-btn {
   background-color: #5f3dc4;
   color: #fff;
   font-weight: bold;
@@ -50,25 +50,33 @@ body {
   cursor: pointer;
 }
 
-.column-container {
+.columns-container {
   display: flex;
-  height: 400px;
+  height: auto;
   gap: 30px;
   justify-content: center;
+  align-items: flex-start;
+}
+
+.topic-column {
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+  background-color: #fff;
+  width: 200px;
+  border-radius: 8px;
 }
 
 .task-column {
+  display: flex;
+  flex-direction: column;
   width: 200px;
   background-color: #fff;
   border-radius: 8px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-.topic-container {
-  height: 300px;
-}
-
-.column-header {
+.task-column__header {
   text-align: center;
   background-color: #91a7ff;
   padding: 10px;
@@ -79,15 +87,15 @@ body {
   margin-bottom: 10px;
 }
 
-.todo-label {
+.task-column__header--todo {
   background-color: #91a7ff;
 }
 
-.in-progress-label {
+.task-column__header--in-progress {
   background-color: #74c0fc;
 }
 
-.done-label {
+.task-column__header--done {
   background-color: #8ce99a;
 }
 
@@ -100,24 +108,24 @@ body {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
-.todo-element {
+.task-column-element--todo {
   background-color: #dbe4ff;
 }
 
-.in-progress-element {
+.task-column-element--in-progress {
   background-color: #d0ebff;
 }
 
-.done-element {
+.task-column-element--done {
   background-color: #d3f9d8;
 }
 
-.task-column-element-text {
+.task-column-element__text {
   font-size: 12px;
   margin-bottom: 5px;
 }
 
-.task-column-element-date {
+.task-column-element__date {
   font-size: 8px;
   text-align: end;
 }
