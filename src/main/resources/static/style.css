@@ -1,3 +1,5 @@
+/* 0px 1px 1px #091E4240, 0px 0px 1px #091E424F */
+
 * {
   padding: 0;
   margin: 0;
@@ -8,6 +10,8 @@ body {
   background-color: #edf2ff;
   font-family: "Inter";
 }
+
+/* Header and Nav */
 
 .main-header {
   margin-bottom: 40px;
@@ -29,7 +33,7 @@ body {
 
 .profile-container {
   display: flex;
-  gap: 35px;
+  gap: 25px;
   align-items: center;
 }
 
@@ -50,10 +54,12 @@ body {
   cursor: pointer;
 }
 
+/* Columns and Elements */
+
 .columns-container {
   display: flex;
   height: auto;
-  gap: 30px;
+  gap: 60px;
   justify-content: center;
   align-items: flex-start;
 }
@@ -70,6 +76,7 @@ body {
 .task-column {
   display: flex;
   flex-direction: column;
+  gap: 10px;
   width: 200px;
   background-color: #fff;
   border-radius: 8px;
@@ -84,7 +91,7 @@ body {
   color: #fff;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  margin-bottom: 10px;
+  align-self: stretch;
 }
 
 .task-column__header--todo {
@@ -101,11 +108,56 @@ body {
 
 .task-column-element {
   padding: 10px;
-  height: 60px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  position: relative;
+  margin: 0 5px;
+}
+
+.task-column-element__text {
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.task-column-element__date {
+  font-size: 8px;
+  text-align: end;
+}
+
+.task-column-element__more-icon {
+  width: 18px;
+  height: 18px;
+  stroke: black;
+  position: absolute;
+  top: 4px;
+  right: 0px;
+  cursor: pointer;
+}
+
+.task-column__add-button {
+  background-color: #91a7ff;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px 5px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.task-column__add-input {
+  min-height: 50px;
   margin-left: 8px;
   margin-right: 8px;
-  margin-bottom: 15px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding: 5px;
+
+  resize: none;
+  outline: none;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  border-radius: 8px;
 }
 
 .task-column-element--todo {
@@ -118,14 +170,4 @@ body {
 
 .task-column-element--done {
   background-color: #d3f9d8;
-}
-
-.task-column-element__text {
-  font-size: 12px;
-  margin-bottom: 5px;
-}
-
-.task-column-element__date {
-  font-size: 8px;
-  text-align: end;
 }
