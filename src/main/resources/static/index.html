@@ -28,7 +28,7 @@
       <div class="topic-column"></div>
 
       <div class="task-column task-column--todo">
-        <p class="task-column__header task-column__header--todo">ToDo</p>
+        <p class="task-column__header task-column__todo--primary-color">ToDo</p>
         <div class="task-column-element task-column-element--todo">
           <p class="task-column-element__text">Testing new App API functions</p>
           <p class="task-column-element__date">2024.01.29</p>
@@ -47,15 +47,33 @@
           <p class="task-column-element__text">Implement CRUD repositories</p>
           <p class="task-column-element__date">2024.01.29</p>
         </div>
-        <textarea
-          placeholder="Create New Card.."
-          class="task-column__add-input"
-        ></textarea>
-        <button class="task-column__add-button">+ New Card</button>
+        <div class="task-column-input-container hidden">
+          <textarea
+            placeholder="Create New Card.."
+            class="task-column-input-container__textarea"
+          ></textarea>
+          <div class="task-column-input-buttons">
+            <button
+              class="task-column-input-button task-column__todo--primary-color"
+            >
+              Create
+            </button>
+            <button
+              class="task-column-input-button task-column__todo--primary-color"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+        <button
+          class="task-column__add-button task-column__todo--primary-color"
+        >
+          + New Card
+        </button>
       </div>
 
       <div class="task-column task-column--in-progress">
-        <p class="task-column__header task-column__header--in-progress">
+        <p class="task-column__header task-column__in-progress--primary-color">
           In Progress
         </p>
         <div class="task-column-element task-column-element--in-progress">
@@ -76,10 +94,33 @@
           <p class="task-column-element__text">Implement CRUD repositories</p>
           <p class="task-column-element__date">2024.01.29</p>
         </div>
+        <div class="task-column-input-container hidden">
+          <textarea
+            placeholder="Create New Card.."
+            class="task-column-input-container__textarea"
+          ></textarea>
+          <div class="task-column-input-buttons">
+            <button
+              class="task-column-input-button task-column__in-progress--primary-color"
+            >
+              Create
+            </button>
+            <button
+              class="task-column-input-button task-column__in-progress--primary-color"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+        <button
+          class="task-column__add-button task-column__in-progress--primary-color"
+        >
+          + New Card
+        </button>
       </div>
 
       <div class="task-column task-column--done">
-        <p class="task-column__header task-column__header--done">Done</p>
+        <p class="task-column__header task-column__done--primary-color">Done</p>
         <div class="task-column-element task-column-element--done">
           <p class="task-column-element__text">Testing new App API functions</p>
           <p class="task-column-element__date">2024.01.29</p>
@@ -98,6 +139,29 @@
           <p class="task-column-element__text">Implement CRUD repositories</p>
           <p class="task-column-element__date">2024.01.29</p>
         </div>
+        <div class="task-column-input-container hidden">
+          <textarea
+            placeholder="Create New Card.."
+            class="task-column-input-container__textarea"
+          ></textarea>
+          <div class="task-column-input-buttons">
+            <button
+              class="task-column-input-button task-column__done--primary-color"
+            >
+              Create
+            </button>
+            <button
+              class="task-column-input-button task-column__done--primary-color"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+        <button
+          class="task-column__add-button task-column__done--primary-color"
+        >
+          + New Card
+        </button>
       </div>
     </section>
   </body>
