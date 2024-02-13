@@ -11,7 +11,7 @@
       rel="stylesheet"
     />
     <title>Planner</title>
-    <script defer src="script.js"></script>
+    <script type="module" defer src="script.js"></script>
   </head>
   <body>
     <header class="main-header">
@@ -24,145 +24,158 @@
       </nav>
     </header>
 
-    <section class="columns-container">
-      <div class="topic-column"></div>
-
-      <div class="task-column task-column--todo">
-        <p class="task-column__header task-column__todo--primary-color">ToDo</p>
-        <div class="task-column-element task-column-element--todo">
-          <p class="task-column-element__text">Testing new App API functions</p>
-          <p class="task-column-element__date">2024.01.29</p>
-        </div>
-        <div class="task-column-element task-column-element--todo">
-          <p class="task-column-element__text">Implement CRUD repositories</p>
-          <p class="task-column-element__date">2024.01.29</p>
-        </div>
-        <div class="task-column-element task-column-element--todo">
-          <p class="task-column-element__text">
-            Add models for spring web project
+    <main class="main-board">
+      <ul class="card-columns">
+        <li class="card-column card-column--todo">
+          <p class="card-column__header card-column__todo--primary-color">
+            ToDo
           </p>
-          <p class="task-column-element__date">2024.01.29</p>
-        </div>
-        <div class="task-column-element task-column-element--todo">
-          <p class="task-column-element__text">Implement CRUD repositories</p>
-          <p class="task-column-element__date">2024.01.29</p>
-        </div>
-        <div class="task-column-input-container hidden">
-          <textarea
-            placeholder="Create New Card.."
-            class="task-column-input-container__textarea"
-          ></textarea>
-          <div class="task-column-input-buttons">
-            <button
-              class="task-column-input-button task-column__todo--primary-color"
-            >
-              Create
-            </button>
-            <button
-              class="task-column-input-button task-column__todo--primary-color"
-            >
-              Cancel
-            </button>
-          </div>
-        </div>
-        <button
-          class="task-column__add-button task-column__todo--primary-color"
-        >
-          + New Card
-        </button>
-      </div>
 
-      <div class="task-column task-column--in-progress">
-        <p class="task-column__header task-column__in-progress--primary-color">
-          In Progress
-        </p>
-        <div class="task-column-element task-column-element--in-progress">
-          <p class="task-column-element__text">Testing new App API functions</p>
-          <p class="task-column-element__date">2024.01.29</p>
-        </div>
-        <div class="task-column-element task-column-element--in-progress">
-          <p class="task-column-element__text">Implement CRUD repositories</p>
-          <p class="task-column-element__date">2024.01.29</p>
-        </div>
-        <div class="task-column-element task-column-element--in-progress">
-          <p class="task-column-element__text">
-            Add models for spring web project
-          </p>
-          <p class="task-column-element__date">2024.01.29</p>
-        </div>
-        <div class="task-column-element task-column-element--in-progress">
-          <p class="task-column-element__text">Implement CRUD repositories</p>
-          <p class="task-column-element__date">2024.01.29</p>
-        </div>
-        <div class="task-column-input-container hidden">
-          <textarea
-            placeholder="Create New Card.."
-            class="task-column-input-container__textarea"
-          ></textarea>
-          <div class="task-column-input-buttons">
-            <button
-              class="task-column-input-button task-column__in-progress--primary-color"
-            >
-              Create
-            </button>
-            <button
-              class="task-column-input-button task-column__in-progress--primary-color"
-            >
-              Cancel
-            </button>
-          </div>
-        </div>
-        <button
-          class="task-column__add-button task-column__in-progress--primary-color"
-        >
-          + New Card
-        </button>
-      </div>
+          <ul class="card-column__card-elements" data-list-type="todo">
+            <li class="card-element card-element--todo">
+              <p class="card-element__text">Testing new App API functions</p>
+              <p class="card-element__date">2024.01.29</p>
+            </li>
+            <li class="card-element card-element--todo">
+              <p class="card-element__text">Implement CRUD repositories</p>
+              <p class="card-element__date">2024.01.29</p>
+            </li>
+            <li class="card-element card-element--todo">
+              <p class="card-element__text">
+                Add models for spring web project
+              </p>
+              <p class="card-element__date">2024.01.29</p>
+            </li>
+          </ul>
 
-      <div class="task-column task-column--done">
-        <p class="task-column__header task-column__done--primary-color">Done</p>
-        <div class="task-column-element task-column-element--done">
-          <p class="task-column-element__text">Testing new App API functions</p>
-          <p class="task-column-element__date">2024.01.29</p>
-        </div>
-        <div class="task-column-element task-column-element--done">
-          <p class="task-column-element__text">Implement CRUD repositories</p>
-          <p class="task-column-element__date">2024.01.29</p>
-        </div>
-        <div class="task-column-element task-column-element--done">
-          <p class="task-column-element__text">
-            Add models for spring web project
+          <form class="card-column__create-form hidden" data-form-type="todo">
+            <textarea
+              placeholder="Create New Card.."
+              class="create-form__textarea"
+              data-card-type="todo"
+            ></textarea>
+            <div class="create-form__buttons">
+              <button
+                class="create-form__button card-column__todo--primary-color"
+              >
+                Create
+              </button>
+              <button
+                class="create-form__button card-column__todo--primary-color"
+              >
+                Cancel
+              </button>
+            </div>
+          </form>
+          <button
+            class="card-column__open-form-button card-column__todo--primary-color"
+            data-column-add-button="todo"
+          >
+            + New Card
+          </button>
+        </li>
+
+        <li class="card-column card-column--in-progress">
+          <p
+            class="card-column__header card-column__in-progress--primary-color"
+          >
+            In Progress
           </p>
-          <p class="task-column-element__date">2024.01.29</p>
-        </div>
-        <div class="task-column-element task-column-element--done">
-          <p class="task-column-element__text">Implement CRUD repositories</p>
-          <p class="task-column-element__date">2024.01.29</p>
-        </div>
-        <div class="task-column-input-container hidden">
-          <textarea
-            placeholder="Create New Card.."
-            class="task-column-input-container__textarea"
-          ></textarea>
-          <div class="task-column-input-buttons">
-            <button
-              class="task-column-input-button task-column__done--primary-color"
-            >
-              Create
-            </button>
-            <button
-              class="task-column-input-button task-column__done--primary-color"
-            >
-              Cancel
-            </button>
-          </div>
-        </div>
-        <button
-          class="task-column__add-button task-column__done--primary-color"
-        >
-          + New Card
-        </button>
-      </div>
-    </section>
+          <ul class="card-column__card-elements" data-list-type="in-progress">
+            <li class="card-element card-element--in-progress">
+              <p class="card-element__text">Testing new App API functions</p>
+              <p class="card-element__date">2024.01.29</p>
+            </li>
+            <li class="card-element card-element--in-progress">
+              <p class="card-element__text">Implement CRUD repositories</p>
+              <p class="card-element__date">2024.01.29</p>
+            </li>
+            <li class="card-element card-element--in-progress">
+              <p class="card-element__text">
+                Add models for spring web project
+              </p>
+              <p class="card-element__date">2024.01.29</p>
+            </li>
+          </ul>
+          <form
+            class="card-column__create-form hidden"
+            data-form-type="in-progress"
+          >
+            <textarea
+              placeholder="Create New Card.."
+              class="create-form__textarea"
+              data-card-type="in-progress"
+            ></textarea>
+            <div class="create-form__buttons">
+              <button
+                class="create-form__button card-column__in-progress--primary-color"
+              >
+                Create
+              </button>
+              <button
+                class="create-form__button card-column__in-progress--primary-color"
+              >
+                Cancel
+              </button>
+            </div>
+          </form>
+          <button
+            class="card-column__open-form-button card-column__in-progress--primary-color"
+            data-column-add-button="in-progress"
+          >
+            + New Card
+          </button>
+        </li>
+
+        <li class="card-column card-column--done">
+          <p class="card-column__header card-column__done--primary-color">
+            Done
+          </p>
+
+          <ul class="card-column__card-elements" data-list-type="done">
+            <li class="card-element card-element--done">
+              <p class="card-element__text">Testing new App API functions</p>
+              <p class="card-element__date">2024.01.29</p>
+            </li>
+            <li class="card-element card-element--done">
+              <p class="card-element__text">Implement CRUD repositories</p>
+              <p class="card-element__date">2024.01.29</p>
+            </li>
+            <li class="card-element card-element--done">
+              <p class="card-element__text">
+                Add models for spring web project
+              </p>
+              <p class="card-element__date">2024.01.29</p>
+            </li>
+          </ul>
+
+          <form class="card-column__create-form hidden" data-form-type="done">
+            <textarea
+              placeholder="Create New Card.."
+              class="create-form__textarea"
+              data-card-type="done"
+            ></textarea>
+            <div class="create-form__buttons">
+              <button
+                class="create-form__button card-column__done--primary-color"
+              >
+                Create
+              </button>
+              <button
+                class="create-form__button card-column__done--primary-color"
+              >
+                Cancel
+              </button>
+            </div>
+          </form>
+          <button
+            class="card-column__open-form-button card-column__done--primary-color"
+            data-column-add-button="done"
+          >
+            + New Card
+          </button>
+        </li>
+      </ul>
+    </main>
   </body>
 </html>
