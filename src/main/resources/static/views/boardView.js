@@ -2,6 +2,7 @@
 
 class BoardView {
   #columnFormAddBtn = document.querySelectorAll(".create-form__button");
+  #activeForm;
 
   constructor() {
     this.#columnFormAddBtn.forEach((btn) => {
@@ -42,6 +43,17 @@ class BoardView {
   }
 
   switchFormAndButton(cardType) {
+    if (this.#activeForm === undefined) {
+      this.#toggleForm(cardType);
+      this.#activeForm = cardType;
+    } else {
+      this.#toggleForm(this.#activeForm);
+      this.#activeForm = cardType;
+      this.#toggleForm(cardType);
+    }
+  }
+
+  #toggleForm(cardType) {
     document
       .querySelector(`.card-column__create-form[data-form-type="${cardType}"]`)
       .classList.toggle("hidden");
@@ -56,15 +68,6 @@ class BoardView {
       )
       .classList.toggle("hidden");
   }
-
-  closeOpenForm(e) {
-    const forms = document.querySelectorAll(".card-column__create-form");
-
-    forms.forEach((form) => {
-      this.switchFormAndButton(form.dataset.dataFormType);
-    });
-  }
-
   addHandlerCreateCard() {}
 }
 
