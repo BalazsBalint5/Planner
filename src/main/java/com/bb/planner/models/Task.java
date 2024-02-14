@@ -34,6 +34,10 @@ public class Task {
     public Task() {
     }
 
+    public Task(String taskLabel) {
+        this.taskLabel = taskLabel;
+    }
+
     public Task(String taskLabel, String taskDescription, LocalDate createdAt, Status status) {
         this.taskLabel = taskLabel;
         this.taskDescription = taskDescription;

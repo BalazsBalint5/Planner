@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/api/tasks")
 public class TaskController{
 
     private final TaskService taskService;
@@ -17,7 +16,7 @@ public class TaskController{
         this.taskService = taskService;
     }
 
-    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "/api/tasks", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Task> getAllTask() {
         return taskService.getAllTask();
     }
@@ -29,7 +28,8 @@ public class TaskController{
 
     @PostMapping(path = "/api/tasks", consumes = MediaType.APPLICATION_JSON_VALUE)
     public void addTask(@RequestBody Task task) {
-        taskService.addTask(task);
+        System.out.println(task.getTaskLabel());
+        //taskService.addTask(task);
     }
 
     @DeleteMapping("tasks/{taskId}")
