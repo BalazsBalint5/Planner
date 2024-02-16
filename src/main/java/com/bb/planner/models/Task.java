@@ -61,5 +61,15 @@ public class Task {
         return createdAt;
     }
 
-
+    @Override
+    public String toString() {
+        return "Task{" +
+                "taskId=" + taskId +
+                ", taskLabel='" + taskLabel + '\'' +
+                ", taskDescription='" + taskDescription + '\'' +
+                ", createdAt=" + createdAt +
+                ", status=" + status +
+                ", topic=" + topic.getTopicLabel() +
+                '}';
+    }
 }

@@ -20,6 +20,9 @@ public class Topic {
     @OneToMany(mappedBy = "topic")
     private List<Task>  tasks;
 
+    public Topic() {
+    }
+
     public Topic(String topicLabel) {
         this.topicLabel = topicLabel;
     }
