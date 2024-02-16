@@ -9,7 +9,7 @@ public interface TaskService {
     Task getTask(Task task);
     Task getTaskById(Integer taskId);
     List<Task> getAllTask();
-    void addTask(Task task);
+    Task addTask(Task task);
     void deleteTask(Task task);
 
 }

@@ -31,8 +31,8 @@ public class TaskServiceImpl implements TaskService{
     }
 
     @Override
-    public void addTask(Task task) {
-        taskRepository.add(task);
+    public Task addTask(Task task) {
+        return taskRepository.add(task);
     }
 
     @Override

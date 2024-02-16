@@ -4,11 +4,13 @@ import com.bb.planner.models.Task;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 import jakarta.transaction.Transactional;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
+@Slf4j
 public class TaskRepositoryImpl implements TaskRepository{
 
     private final EntityManager entityManager;
@@ -19,9 +21,7 @@ public class TaskRepositoryImpl implements TaskRepository{
 
     @Override
     public List<Task> getAll() {
-
         TypedQuery<Task> theQuery = entityManager.createQuery("FROM Task", Task.class);
-
         return theQuery.getResultList();
     }
 
@@ -37,8 +37,9 @@ public class TaskRepositoryImpl implements TaskRepository{
 
     @Override
     @Transactional
-    public void add(Task element) {
+    public Task add(Task element) {
         entityManager.persist(element);
+        return element;
     }
 
     @Override
