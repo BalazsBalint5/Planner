@@ -13,13 +13,3 @@ const init = function () {
 };
 
 init();
-
-/*     fetch("http://localhost:8080/api/tasks", {
-      method: "POST",
-      body: JSON.stringify({
-        taskLabel: taskLabel,
-      }),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    }); */

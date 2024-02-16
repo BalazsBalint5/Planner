@@ -24,6 +24,7 @@ class BoardView {
       this.#generateCardElement(cardLabel, cardType)
     );
 
+    this.#postNewElement(cardLabel);
     this.switchFormAndButton(cardType);
   }
 
@@ -69,6 +70,18 @@ class BoardView {
       .classList.toggle("hidden");
   }
   addHandlerCreateCard() {}
+
+  #postNewElement(cardLabel) {
+    fetch("http://localhost:8080/api/tasks", {
+      method: "POST",
+      body: JSON.stringify({
+        taskLabel: cardLabel,
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    });
+  }
 }
 
 export default new BoardView();
