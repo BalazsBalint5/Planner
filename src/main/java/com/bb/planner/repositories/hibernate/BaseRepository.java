@@ -1,4 +1,4 @@
-package com.bb.planner.repositories.own;
+package com.bb.planner.repositories.hibernate;
 
 import com.bb.planner.models.Task;
 
@@ -7,8 +7,8 @@ import java.util.List;
 public interface BaseRepository<T, K> {
 
     List<T> getAll();
-    Task get(T element);
-    Task getById(K elementId);
+    T get(T element);
+    T getById(K elementId);
     T add(T element);
     void delete(T element);
 }
