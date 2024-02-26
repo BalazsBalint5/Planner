@@ -11,4 +11,5 @@ public interface BaseRepository<T, K> {
     T getById(K elementId);
     T add(T element);
     void delete(T element);
+    void deleteById(K elementId);
 }
