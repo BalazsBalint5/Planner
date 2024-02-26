@@ -5,6 +5,8 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +16,16 @@ import java.util.List;
 public class Topic {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(generator = "topic_sequence")
+    @GenericGenerator(
+            name = "topic_sequence",
+            type = org.hibernate.id.enhanced.SequenceStyleGenerator.class,
+            parameters = {
+                    @Parameter(name = "sequence_name", value = "topic_sequence"),
+                    @Parameter(name = "initial_value", value = "161"),
+                    @Parameter(name = "increment_value", value = "1"),
+            }
+    )
     @Column(name = "topic_id")
     @NotNull(message = "Topic id can't be null")
     @Min(message = "Topic id must be greater then 0", value = 1)
@@ -27,7 +38,7 @@ public class Topic {
     private String topicLabel;
 
     @Column(name = "task_list")
-    @OneToMany(mappedBy = "topic")
+    @OneToMany(mappedBy = "topic", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
     private List<Task>  tasks;
 
     public Topic() {
@@ -48,6 +59,11 @@ public class Topic {
 
     public List<Task> getTasks() {
         return tasks;
+    }
+
+    public void addTask(Task task){
+        task.setTopic(this);
+        tasks.add(task);
     }
 
     @Override
